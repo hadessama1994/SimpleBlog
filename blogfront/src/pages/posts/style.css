@@ -1,0 +1,237 @@
+  
+
+  .X{
+    margin: auto;
+    padding: 1% 2%;
+    max-width: 104%;
+    border-radius: 5px;
+    background: #ecf0f1;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0, .3);
+    
+  }
+
+  .avatar{
+    margin: 10px 0 ;
+    padding: 0 0 25px 18px;
+    text-align: initial;
+  }
+
+
+  .perfil{
+    text-align: left;
+    padding: 10px;
+    background-color: #333;
+    
+  }
+  .perfil img{
+   
+   width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 0.1px 1px;
+  
+  }
+
+  .perfil img:hover{
+    box-shadow: 0 0 0 4px #fff;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    transition: color 0.3s;
+  
+    transform: rotate(-15deg);
+    transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+    
+  }
+
+
+
+    .perfil p{
+      
+      color: ivory;
+    }
+
+    .perfil ul{
+      
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      
+    }
+
+    .perfil li{
+      display: inline;
+      list-style-type: none;
+      padding-right: 20px;    
+      font-size: 25px;
+      color: whitesmoke;
+          
+    }
+
+    
+    .perfil li:hover:not(.active){
+      background-color: #111;
+      background-size:     contain;                      /* <------ */
+      background-repeat:   repeat-y;
+      background-position: center center;
+      
+          
+    }
+
+    
+
+  .postagens{
+    
+    text-align: center;
+    padding: 0 10%;
+  
+  }
+
+  .avatarNome{
+    background-color: whitesmoke;
+    
+    
+    position: relative;
+    
+    color: rgb(180, 0, 141);
+       
+  }
+
+ .postagens ul{
+   display: flex;
+    flex-direction: column-reverse;
+ }
+
+  .image{
+ 
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  padding: 0.1px 1px;
+  }
+
+ .data{
+   text-align: left;
+   font-size: 12px;
+   padding: 0 0 0 10px;
+ } 
+
+ .data > a:hover {
+  font-size: 14px;
+ }
+
+ .texto {
+   padding: 30px;
+   border-bottom: 1px solid rgb(206, 206, 206);
+   text-align: left;
+ }
+
+ .author{
+   font-size: 18px;
+   padding: 15px;
+   text-align: initial;
+   
+ }
+
+ 
+
+  .title{
+    padding-bottom: 10px;
+     border-bottom: 3px solid darkslateblue;
+    text-align: center;
+    padding: 10px 0 40px 0;
+    
+  }
+  .title:hover{    border-bottom: 3px solid rgb(206, 206, 206);
+  
+  }
+  
+  .postagens li{
+    color: #2c3e50;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    font-family: 'Raleway', serif;
+    padding-top: 15px ;
+    padding-bottom: 4px;
+    
+   
+  }
+  /*SG = style grid*/
+  .SG{
+    margin: 50px;
+    
+    }
+
+ 
+  .SG .sgLi{
+    
+    margin: 1% .35%;
+    box-shadow: 0 2px 4px rgba(0,0,0, .2);
+    background-color: #fff;
+    border-radius: 7px;
+    width: auto;
+    
+    
+  }
+    
+  .ribbon{
+    font-size:20px;
+    position:relative;
+    display:inline-block;
+    padding: 75px 0px 12px 0;
+    text-align:center;
+  }
+  .text{
+    display:inline-block;
+    padding:0.6em 1.1em;
+    min-width:auto;
+    line-height:1.2em;
+    background: rgb(192, 46, 131);
+    color: lavenderblush;
+    position: absolute;
+    margin: 8px;
+  }
+  .ribbon:after,.ribbon:before,
+  .text:before,.text:after,
+  .bold:before{
+    content:'';
+    position:absolute;
+    border-style:solid;
+  }
+  .ribbon:before{
+    top:0.3em; left:0.2em;
+    width:100%; height:100%;
+    border:none;
+    background:#EBECED;
+    z-index:-2;
+  }
+  .text:before{
+    top:100%; left:0;
+    border-width: 0 0 2em .5em ;
+    border-color: rgb(138, 30, 93) transparent transparent transparent;
+  }
+  .text:after{
+    top:100%; right:0;
+    border-width: .5em 2em 0 0;
+    border-color: rgb(138, 30, 93) transparent transparent transparent;
+  }
+  .ribbon:after, .bold:before{
+    top:0.5em;right:-2em;
+    border-width: 1.1em 1em 1.1em 3em;
+    border-color: #FECC30 transparent #FECC30 #FECC30;
+    z-index:-1;
+  }
+  .bold:before{
+    border-color: #EBECED transparent #EBECED #EBECED;
+    top:0.7em;
+    right:-2.3em;
+  }
+  
+  .erromsg{
+    color: orangered;
+    margin-top: 25px;
+  }
+    
+  
+  

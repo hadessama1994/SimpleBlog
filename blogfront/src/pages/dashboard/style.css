@@ -1,0 +1,16 @@
+.form {
+  background-color: #ffffff;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+  margin-top: 10%;
+  
+  
+}
+
+textarea {
+  resize: none;
+}
+
+h1{margin-bottom: 30px;}
