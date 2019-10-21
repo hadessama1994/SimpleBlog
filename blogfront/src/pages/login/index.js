@@ -2,6 +2,7 @@ import React, {useState, Component} from 'react';
 import api from '../../services/api';
 import { Link, withRouter } from "react-router-dom";
 import { login } from "../../services/auth";
+import './style.css';
 
 class Login extends Component {
     state = {
@@ -22,8 +23,14 @@ class Login extends Component {
         try {
             const response = await api.post("/sessions", { username, password });
             login(response.data.token);
-            this.props.history.push("/dashboard");
+            this.props.history.push("./");
+            document.location.reload(true)
           } catch (err) {
+
+            document.getElementById('eventoerro').append("Houve um problema com o login, verifique suas credenciais.");
+            
+
+
             this.setState({
               error:
                 "Houve um problema com o login, verifique suas credenciais."
@@ -49,14 +56,15 @@ class Login extends Component {
         <>
 
         
-        <center>
-        <p>
-        Digite o <strong>usuario</strong> e <strong>Senha</strong> cadastrados! 
+        
+        
+        
        
-            </p></center>
+            
 
 
-        <form onSubmit={this.handleSubmit}>
+        <form  className='form' onSubmit={this.handleSubmit}>
+        <h1>Digite o <strong>usuario</strong> e <strong>Senha</strong> cadastrados! </h1>
             <label htmlFor="inp" className="inp">
                 <input type = "text"
                  id = "usuario" 
@@ -76,7 +84,9 @@ class Login extends Component {
                 <label className="label" htmlFor="mail"> SENHA  </label>
             </label>
 
-                <center><button>Entrar</button></center>
+                <button>Entrar</button>
+                <h2 className='erromsg' id='eventoerro'></h2>
+                <h2>Ainda não é cadastrado? <a href='./cadastro'>Clique aqui!</a></h2>
             
         </form>
 

@@ -12,7 +12,7 @@ export default function Login({ history }) {
     event.preventDefault();
 
     await api.post('/posts', { title,posttext,tags});
-    document.getElementById("form").reset();
+    document.getElementById("form").reset()
     
     //const { _id } = response.data;
 

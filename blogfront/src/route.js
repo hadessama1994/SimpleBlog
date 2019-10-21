@@ -6,6 +6,7 @@ import login from './pages/login'
 import dashboard from './pages/dashboard'
 import posts from './pages/posts' 
 import profile from './pages/profile' 
+import cadastro from './pages/cadastro' 
  
 //
 
@@ -32,6 +33,7 @@ export default function Routes(){
         <Route path ="/login" component = {login}/> 
         <Route path ="/dashboard" component = {dashboard}/>
         <Route path ="/profile" component = {profile}/>
+        <Route path ="/cadastro" component = {cadastro}/>
 
         
 
