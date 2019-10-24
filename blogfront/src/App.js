@@ -30,13 +30,15 @@ catch(e){ //se nao tiver ninguem logado ainda
   //document.getElementById('logout').appendChild(node);
   ;
 }
-   
-   
- 
-
-   
  
  }
+
+
+ function handleClick(e) {
+  e.preventDefault();
+  logout();
+  document.location.reload(true) //chamar logou e recarregar a pagina
+}
 
  
  
@@ -59,7 +61,7 @@ function App() {
    <li > <a id='linkPerilCadastro' href='./'>Home</a> </li>
    <li> <a id='linkPost' href='#'>Postar</a> </li>
    <li> <a href='#'>Sobre</a> </li>
-   <li id='logout'> <a href='#' onClick={ logout()} ></a> </li>
+   <li onClick={handleClick}> <a id='logout' href='#'></a> </li>
    
 
 

@@ -4,7 +4,7 @@
     module.exports = {
         authHeader(req,res,next){
         const authHead = req.headers.authorization //token passado pelo header
-        
+        console.log(authHead)
         const bearer = authHead.split(' '); //separar o Bearer do token
         const token = bearer[1]; //pegar o token sem o Bearer
 

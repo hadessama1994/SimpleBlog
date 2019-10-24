@@ -1,31 +1,52 @@
-import React, { useState } from 'react';
+import React, {useState, Component} from 'react';
 import api from '../../services/api';
+import axios from 'axios';
+import { getToken } from "../../services/auth";
+
+export default function Profile({ history }) {
 
 
-
-export default function Login({ history }) {
   const [username, setUsername] = useState('');
   const [oldPassword, setOldPassword] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-
-    
+  const [thumb, setThumb] = useState('');
+  const [thumbname, setThumbName] = useState('');
+  
+  
+  
 
   async function handleSubmit(event) {
     event.preventDefault();
-
+    
     const evento = await api.put('/users', {username,email,oldPassword,password});
+
+    const formData = new FormData();
+    formData.append('file',thumb)
+
+    try{
+    await axios.put('http://localhost:4005/files',formData,
+    {
+      headers:{
+      'authorization': 'Bearer '+getToken()},
+      'Content-Type': 'multipart/form-data' ,
+    })
+  } catch(err){console.log('erro')}
     
 
     document.getElementById('eventoerro').append(evento.data.error);
     
-    //const { _id } = response.data;
-
-    //localStorage.setItem('user', _id);
-
-   // history.push('/dashboard');
+    
   }
 
+  const onChange = async e =>{
+    setThumb(e.target.files[0])
+    setThumbName(e.target.files[0].name)
+
+    
+  }
+
+  
   
 
   return (
@@ -48,7 +69,7 @@ export default function Login({ history }) {
 <label htmlFor="title">Email</label>
         <input 
           id="title" 
-          type="text" 
+          type="email" 
           
          value={email}
           onChange={event => setEmail(event.target.value)}
@@ -71,7 +92,10 @@ export default function Login({ history }) {
           onChange={event => setPassword(event.target.value)}
         />
 
-        <input type='file'/>
+        <input type='file' 
+        id="thumb" 
+               
+        onChange={onChange}/>
 
         <button className="btn" type="submit">Update</button>
 
@@ -83,5 +107,6 @@ export default function Login({ history }) {
     
   )
 
-  
 }
+
+
