@@ -24,7 +24,7 @@ module.exports={
         const post = await Post.find({}).populate({path: 'userid', select: 'username'}).populate({path: 'avatarid', select : 'path'}) 
         //ele vai buscar todos os posts, e pegar o USERID 
                                                                                       //referenciado e selecionar o username dentro de Users
-        
+        post.reverse();
         
         return res.json({post}) //mostrar todos os posts
           

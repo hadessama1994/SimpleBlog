@@ -96,10 +96,7 @@
        
   }
 
- .postagens ul{
-   display: flex;
-    flex-direction: column-reverse;
- }
+ 
 
   .image{
  
